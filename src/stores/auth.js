@@ -41,20 +41,5 @@ export const useAuthStore = defineStore("auth", {
       await axios.post("/logout");
       this.authUser = null;
     },
-    async handleForgotPassword(email) {
-      this.authErrors = [];
-      this.getToken();
-      try {
-        const response = await axios.post("/forgot-password", {
-          email: email,
-        });
-        this.authStatus = response.data.status;
-      } catch (error) {
-        if (error.response.status === 422) {
-          this.authErrors = error.response.data.errors;
-        }
-      }
-    },
-
   },
 });

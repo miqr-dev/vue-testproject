@@ -9,6 +9,11 @@ const routes = [
     name: "Login",
     component: () => import("../components/Login.vue"),
   },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import("../components/Cart.vue"),
+  },
 ];
 
 const router = createRouter({

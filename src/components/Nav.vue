@@ -63,7 +63,17 @@ const authStore = useAuthStore();
               :to="{ name: 'Profile' }"
               class="block rounded py-2 pr-4 pl-3 text-white"
               aria-current="page"
+              active-class="bg-indigo-700"
               >Profile</router-link
+            >
+          </li>
+          <li v-if="authStore.user">
+            <router-link
+              :to="{ name: 'Cart' }"
+              class="block rounded py-2 pr-4 pl-3 text-white"
+              aria-current="page"
+              active-class="bg-indigo-700"
+              >Cart</router-link
             >
           </li>
           <template v-if="!authStore.user">
@@ -77,7 +87,7 @@ const authStore = useAuthStore();
                   pr-4
                   pl-3
                   text-gray-50
-                  hover:bg-gray-700
+                  hover:bg-indigo-700
                 "
                 >Login</router-link
               >
